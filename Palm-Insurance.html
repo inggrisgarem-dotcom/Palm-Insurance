@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Commercial Insurance | Portfolio Demo</title>
+    <meta name="description" content="Commercial Insurance Brokerage - Powered by People, Enhanced by AI Precision. Protecting What Matters Most Since 1995.">
+    
+    <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2b5c3f; /* Deep Palm Green */
+            --primary-hover: #1e402c;
+            --accent-color: #c5a86a; /* Elegant Gold */
+            --text-dark: #212529;
+            --text-light: #6c757d;
+            --bg-light: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Navbar & Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(43, 92, 63, 0.3);
+        }
+
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80') center/cover;
+            padding: 120px 0 100px 0;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .hero h1 {
+            color: var(--text-dark);
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .lead {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+
+        /* Services / Coverage Cards */
+        .services-section {
+            padding: 80px 0;
+        }
+        
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 30px;
+            height: 100%;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: #ffffff;
+            padding: 80px 0;
+            border-top: 5px solid var(--accent-color);
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .about-title {
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--bg-light);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        .contact-info-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            height: 100%;
+        }
+
+        .contact-info-box i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 50px 0 20px 0;
+        }
+
+        footer a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: white;
+        }
+
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav">
+
+    <!-- Top Bar -->
+    <div class="top-bar text-center">
+        <div class="container">
+            <strong>Protecting What Matters Most Since 1995</strong>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fa-solid fa-leaf me-2"></i>PALM INSURANCE
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">COVERAGES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="tel:5550198877" class="btn btn-primary-custom">
+                            CALL: (555) 019-8877
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1>Commercial Insurance Brokerage</h1>
+                    <p class="lead">Powered by People, Enhanced by AI Precision</p>
+                    <p class="mb-4 text-muted">We combine decades of expertise with cutting-edge technology to deliver smarter, faster, and more personalized insurance solutions tailored to your unique business needs.</p>
+                    <a href="#quote" class="btn btn-primary-custom me-2"><i class="fa-solid fa-file-invoice me-2"></i> Request a Quote</a>
+                    <a href="#services" class="btn btn-outline-dark px-4 py-2" style="border-radius: 50px;">Explore Coverages</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="mb-3">Our Comprehensive Coverages</h2>
+                <p class="text-muted">Specialized protection tailored for businesses and individuals.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
+                        <i class="fa-solid fa-utensils service-icon"></i>
+                        <h4>Restaurants & Taverns <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <p>Essential protection covering General Liability, Liquor Liability, Spoilage, and Equipment Breakdown.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
+                        <i class="fa-regular fa-building service-icon"></i>
+                        <h4>Apartment Buildings <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <p>Protect against tenant injury claims, loss of rental income, and property damage lawsuits.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
+                        <i class="fa-solid fa-city service-icon"></i>
+                        <h4>Commercial Property <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <p>Comprehensive coverage for buildings, improvements, business personal property, and income loss.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
+                        <i class="fa-solid fa-briefcase service-icon"></i>
+                        <h4>Business Owners’ Policy <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <p>Safeguard your business with bundled property, liability, cyber, and crime coverage.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
+                        <i class="fa-solid fa-hard-hat service-icon"></i>
+                        <h4>Workers’ Compensation <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <p>Cover medical expenses and lost wages for employees injured on the job while keeping compliant.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
+                        <i class="fa-solid fa-house-chimney service-icon"></i>
+                        <h4>Homeowners & Landlords <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <p>Protect your dwelling, personal belongings, and investment properties from covered losses.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="about-title">A Legacy of Trust Since 1995</h2>
+            
+            <div class="row align-items-center mt-5">
+                <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200" alt="Robert Sterling" class="team-img">
+                    <h4 class="mt-3">Robert Sterling</h4>
+                    <h6 class="text-muted mb-3">CEO-COO</h6>
+                    <p>Robert Sterling has been a trusted name in the commercial insurance sector for decades, providing exceptional service to businesses across the region. Combining extensive industry expertise with an advanced background in AI-driven risk assessment, he delivers modern, efficient, and highly customized insurance solutions while maintaining the personal touch clients value.</p>
+                </div>
+                
+                <div class="col-lg-6 text-center text-lg-start">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="Emily Carter" class="team-img">
+                    <h4 class="mt-3">Emily Carter</h4>
+                    <h6 class="text-muted mb-3">President</h6>
+                    <p>Emily Carter brings over fifteen years of corporate operational experience to Palm Insurance. Her deep understanding of daily business challenges allows her to anticipate client needs accurately. Renowned for her clear communication and steadfast commitment to client success, Emily ensures every business owner receives comprehensive and reliable support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2>Contact Us</h2>
+                <p class="text-muted">We are here to answer your questions and provide the coverage you need.</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-box">
+                        <i class="fa-solid fa-building"></i>
+                        <h5>Corporate Info</h5>
+                        <p class="mb-1">Palm Insurance LLC</p>
+                        <p class="mb-1">Agency License: 9876543</p>
+                        <p class="mb-0"><a href="#" class="text-decoration-none text-dark">www.palminsurancedemo.net</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <h5>Phone Directory</h5>
+                        <p class="mb-1"><strong>Toll-Free:</strong> (555) 019-8877</p>
+                        <p class="mb-1"><strong>Downtown Office:</strong> (555) 234-5678</p>
+                        <p class="mb-0"><strong>Westside Branch:</strong> (555) 876-5432</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="contact-info-box">
+                        <i class="fa-solid fa-envelope"></i>
+                        <h5>Email Us</h5>
+                        <p class="mb-1"><a href="mailto:contact@palminsurancedemo.net" class="text-decoration-none text-dark">contact@palminsurancedemo.net</a></p>
+                        <p class="mb-1"><a href="mailto:support@palminsurancedemo.net" class="text-decoration-none text-dark">support@palminsurancedemo.net</a></p>
+                        <a href="#contact" class="btn btn-outline-dark btn-sm mt-3">Contact Form</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-md-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2026 Palm Insurance LLC. All Rights Reserved. (Demo Portfolio)</p>
+                    <div class="mt-2">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="me-3">Privacy Policy</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Disclaimer</a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-md-end social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Universal Coverages Modal (Demo Version) -->
+    <div class="modal fade" id="genericModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Coverage Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This is a portfolio demonstration. In a live production environment, this section will detail the specific policies, limits, and terms for the selected insurance product line (e.g., General Liability, Commercial Property, Workers' Compensation).</p>
+                    <ul class="list-group list-group-flush mt-3">
+                        <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Customizable limits and deductibles</li>
+                        <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Comprehensive liability protection</li>
+                        <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Business interruption support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal fade" id="privacyModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Privacy Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>This notice describes our privacy policy. By visiting our Web Site, you are accepting the practices described in this Notice.</p>
+                    <h6>ARTICLE I– PRINCIPLES:</h6>
+                    <p><strong>(1) Notice:</strong> We may gather and use information as follows:<br>
+                    <strong>(a) Volunteered Information:</strong> We will receive and store any information you enter on the Web Site to improve your experience and to enable us to contact you.<br>
+                    <strong>(b) Automatic Information:</strong> We collect aggregated site-visitation statistics using cookies to enhance users’ web viewing experience.</p>
+                    <p><em>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</em></p>
+                    <p><strong>(2) Choice & Security:</strong> We give you a choice as to the type of private information we have and protect it using Secure Socket Layer (SSL) technology.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Disclaimer Modal -->
+    <div class="modal fade" id="disclaimerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Disclaimer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>The information provided on this website is for general informational purposes only and should not be construed as insurance, legal, or financial advice.</p>
+                    <p>Insurance coverage is subject to the terms, conditions, limitations, and exclusions of the applicable policy. Coverage availability, limits, and premiums vary by carrier, state, and individual risk.</p>
+                    <p><em>Note: This website is a portfolio demonstration for Upwork. All entities, names, and contact details are entirely fictional.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
