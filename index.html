@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palm Commercial Insurance | Portfolio Demo</title>
+    <meta name="description" content="Commercial Insurance Brokerage - Protecting What Matters Most Since 1995.">
     
     <!-- Google Fonts: Montserrat (Headings) & Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,21 +43,21 @@
         .top-bar {
             background-color: var(--primary-color);
             color: white;
-            padding: 8px 0;
-            font-size: 0.9rem;
+            padding: 10px 0;
+            font-size: 0.85rem;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        /* Navbar & Smooth Scrolling */
+        /* Navbar Layout */
         html {
             scroll-behavior: smooth;
         }
         
         .navbar {
             background-color: #ffffff;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            padding: 18px 0;
         }
         
         .navbar-brand {
@@ -64,12 +65,15 @@
             font-weight: 800;
             color: var(--primary-color) !important;
             font-size: 1.5rem;
+            letter-spacing: -0.5px;
         }
 
+        /* Nav Links Desktop */
         .nav-link {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text-dark) !important;
-            margin: 0 10px;
+            margin: 0 12px;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
         }
 
@@ -77,15 +81,16 @@
             color: var(--primary-color) !important;
         }
 
+        /* Universal Primary Button */
         .btn-primary-custom {
             background-color: var(--primary-color);
             color: white;
             border: none;
-            padding: 10px 24px;
+            padding: 12px 28px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(43, 92, 63, 0.3);
+            box-shadow: 0 4px 15px rgba(43, 92, 63, 0.25);
         }
 
         .btn-primary-custom:hover {
@@ -93,56 +98,134 @@
             transform: translateY(-2px);
             color: white;
         }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--text-dark);
+            color: var(--text-dark);
+            background: transparent;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--text-dark);
+            color: white;
+        }
+
+        /* Hamburger Menu Adjustments (No Box, Full Screen Overlay) */
+        .navbar-toggler {
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0;
+        }
+        
+        .navbar-toggler:focus {
+            outline: none !important;
+        }
+        
+        .navbar-close {
+            display: none;
+        }
+
+        @media (max-width: 991.98px) {
+            /* Full Screen Mobile Menu */
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: #ffffff;
+                z-index: 2000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 0.3s ease, visibility 0.3s ease;
+            }
+            .navbar-collapse.show {
+                opacity: 1;
+                visibility: visible;
+                display: flex;
+            }
+            .navbar-nav {
+                width: 100%;
+                text-align: center;
+                gap: 25px;
+            }
+            .nav-link {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+            /* X Close Button inside Mobile Menu */
+            .navbar-close {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                background: none;
+                border: none;
+                font-size: 2.2rem;
+                color: var(--text-dark);
+                cursor: pointer;
+            }
+        }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80') center/cover;
-            padding: 120px 0 100px 0;
-            border-bottom: 5px solid var(--accent-color);
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80') center/cover;
+            padding: 140px 0 120px 0;
+            border-bottom: 6px solid var(--accent-color);
         }
 
         .hero h1 {
             color: var(--text-dark);
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 20px;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
 
-        .hero .lead {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 30px;
+        .hero p.desc {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
         }
 
-        /* Services / Coverage Cards */
+        /* Services Cards */
         .services-section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         .service-card {
             background: #ffffff;
             border: 1px solid #e9ecef;
             border-radius: 12px;
-            padding: 30px;
+            padding: 35px 30px;
             height: 100%;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
             border-color: var(--primary-color);
         }
 
         .service-icon {
             font-size: 2.5rem;
             color: var(--primary-color);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .service-card h4 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
 
@@ -150,60 +233,64 @@
             color: var(--text-light);
             font-size: 0.95rem;
             margin-bottom: 0;
+            line-height: 1.6;
         }
 
         /* About Section */
         .about-section {
             background-color: #ffffff;
-            padding: 80px 0;
-            border-top: 5px solid var(--accent-color);
-            border-bottom: 5px solid var(--accent-color);
+            padding: 100px 0;
+            border-top: 1px solid #e9ecef;
         }
 
         .about-title {
             color: var(--primary-color);
             text-transform: uppercase;
             letter-spacing: 2px;
-            font-size: 2rem;
-            margin-bottom: 40px;
-            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 60px;
         }
 
         .team-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
             border-radius: 50%;
-            border: 4px solid var(--bg-light);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
         }
 
         /* Contact Section */
         .contact-section {
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
         .contact-info-box {
             background: white;
-            padding: 30px;
+            padding: 40px 30px;
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
             text-align: center;
             height: 100%;
         }
 
         .contact-info-box i {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Form Modal Inputs Styling */
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(43, 92, 63, 0.25);
         }
 
         /* Footer */
         footer {
             background-color: var(--text-dark);
             color: white;
-            padding: 50px 0 20px 0;
+            padding: 60px 0 30px 0;
         }
 
         footer a {
@@ -218,19 +305,22 @@
 
         .social-icons a {
             font-size: 1.5rem;
-            margin: 0 10px;
+            margin: 0 12px;
             color: white;
         }
 
         .social-icons a:hover {
             color: var(--primary-color);
+            transform: translateY(-2px);
+            display: inline-block;
         }
 
-        .modal-body {
-            max-height: 70vh;
-            overflow-y: auto;
-            font-size: 0.9rem;
-            color: var(--text-light);
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .hero { padding: 100px 0 80px 0; }
+            .about-title { font-size: 1.8rem; }
+            .services-section, .about-section, .contact-section { padding: 70px 0; }
         }
     </style>
 </head>
@@ -246,20 +336,27 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="fa-solid fa-leaf me-2"></i>PALM INSURANCE
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="fa-solid fa-leaf fs-3 me-2"></i>PALM INSURANCE
             </a>
+            
+            <!-- Hamburger Icon (Clean lines, no box) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fa-solid fa-bars fs-1" style="color: var(--text-dark);"></i>
             </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#services">COVERAGES</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">ABOUT US</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">CONTACT US</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a href="tel:5550198877" class="btn btn-primary-custom">
+            
+            <!-- Nav Menu (Desktop Normal, Mobile Full Screen Overlay) -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <button class="navbar-close" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link nav-link-close" href="#home">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-close" href="#services">COVERAGES</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-close" href="#about">ABOUT US</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-close" href="#contact">CONTACT US</a></li>
+                    <li class="nav-item ms-lg-3 mt-4 mt-lg-0">
+                        <a href="tel:5550198877" class="btn btn-primary-custom w-100 nav-link-close">
                             CALL: (555) 019-8877
                         </a>
                     </li>
@@ -272,11 +369,19 @@
     <section id="home" class="hero text-center">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8">
+                <div class="col-lg-10">
                     <h1>Commercial Insurance Brokerage</h1>
-                    <p class="mb-4 text-muted">We combine decades of expertise with cutting-edge technology to deliver smarter, faster, and more personalized insurance solutions tailored to your unique business needs.</p>
-                    <a href="#quote" class="btn btn-primary-custom me-2"><i class="fa-solid fa-file-invoice me-2"></i> Request a Quote</a>
-                    <a href="#services" class="btn btn-outline-dark px-4 py-2" style="border-radius: 50px;">Explore Coverages</a>
+                    <p class="desc text-muted">We combine decades of expertise with cutting-edge technology to deliver smarter, faster, and more personalized insurance solutions tailored to your unique business needs.</p>
+                    
+                    <!-- Perfectly Aligned Buttons -->
+                    <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#contactFormModal" class="btn btn-primary-custom d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-file-invoice me-2"></i> Request a Quote
+                        </a>
+                        <a href="#services" class="btn btn-outline-custom d-flex align-items-center justify-content-center">
+                            Explore Coverages
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -285,16 +390,17 @@
     <!-- Services Section -->
     <section id="services" class="services-section">
         <div class="container">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5 pb-2">
                 <h2 class="mb-3">Our Comprehensive Coverages</h2>
                 <p class="text-muted">Specialized protection tailored for businesses and individuals.</p>
             </div>
             
             <div class="row g-4">
+                <!-- Service Cards -->
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
                         <i class="fa-solid fa-utensils service-icon"></i>
-                        <h4>Restaurants & Taverns <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <h4>Restaurants & Taverns</h4>
                         <p>Essential protection covering General Liability, Liquor Liability, Spoilage, and Equipment Breakdown.</p>
                     </div>
                 </div>
@@ -302,7 +408,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
                         <i class="fa-regular fa-building service-icon"></i>
-                        <h4>Apartment Buildings <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <h4>Apartment Buildings</h4>
                         <p>Protect against tenant injury claims, loss of rental income, and property damage lawsuits.</p>
                     </div>
                 </div>
@@ -310,7 +416,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
                         <i class="fa-solid fa-city service-icon"></i>
-                        <h4>Commercial Property <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <h4>Commercial Property</h4>
                         <p>Comprehensive coverage for buildings, improvements, business personal property, and income loss.</p>
                     </div>
                 </div>
@@ -318,7 +424,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
                         <i class="fa-solid fa-briefcase service-icon"></i>
-                        <h4>Business Owners’ Policy <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <h4>Business Owners’ Policy</h4>
                         <p>Safeguard your business with bundled property, liability, cyber, and crime coverage.</p>
                     </div>
                 </div>
@@ -326,7 +432,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
                         <i class="fa-solid fa-hard-hat service-icon"></i>
-                        <h4>Workers’ Compensation <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <h4>Workers’ Compensation</h4>
                         <p>Cover medical expenses and lost wages for employees injured on the job while keeping compliant.</p>
                     </div>
                 </div>
@@ -334,7 +440,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="service-card" data-bs-toggle="modal" data-bs-target="#genericModal">
                         <i class="fa-solid fa-house-chimney service-icon"></i>
-                        <h4>Homeowners & Landlords <i class="fa-solid fa-angle-right float-end mt-1 text-muted"></i></h4>
+                        <h4>Homeowners & Landlords</h4>
                         <p>Protect your dwelling, personal belongings, and investment properties from covered losses.</p>
                     </div>
                 </div>
@@ -345,21 +451,21 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
-            <h2 class="about-title">A Legacy of Trust Since 1995</h2>
+            <h2 class="about-title text-center">A Legacy of Trust Since 1995</h2>
             
             <div class="row align-items-center mt-5">
-                <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start">
+                <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start pe-lg-5">
                     <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200" alt="Robert Sterling" class="team-img">
                     <h4 class="mt-3">Robert Sterling</h4>
-                    <h6 class="text-muted mb-3">CEO-COO</h6>
-                    <p>Robert Sterling has been a trusted name in the commercial insurance sector for decades, providing exceptional service to businesses across the region. Combining extensive industry expertise, he delivers modern, efficient, and highly customized insurance solutions while maintaining the personal touch clients value.</p>
+                    <h6 class="text-muted mb-4">CEO-COO</h6>
+                    <p class="text-muted" style="line-height: 1.7;">Robert Sterling has been a trusted name in the commercial insurance sector for decades, providing exceptional service to businesses across the region. Combining extensive industry expertise, he delivers modern, efficient, and highly customized insurance solutions while maintaining the personal touch clients value.</p>
                 </div>
                 
-                <div class="col-lg-6 text-center text-lg-start">
+                <div class="col-lg-6 text-center text-lg-start ps-lg-5">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="Emily Carter" class="team-img">
                     <h4 class="mt-3">Emily Carter</h4>
-                    <h6 class="text-muted mb-3">President</h6>
-                    <p>Emily Carter brings over fifteen years of corporate operational experience to Palm Insurance. Her deep understanding of daily business challenges allows her to anticipate client needs accurately. Renowned for her clear communication and steadfast commitment to client success, Emily ensures every business owner receives comprehensive and reliable support.</p>
+                    <h6 class="text-muted mb-4">President</h6>
+                    <p class="text-muted" style="line-height: 1.7;">Emily Carter brings over fifteen years of corporate operational experience to Palm Insurance. Her deep understanding of daily business challenges allows her to anticipate client needs accurately. Renowned for her clear communication and steadfast commitment to client success, Emily ensures every business owner receives comprehensive and reliable support.</p>
                 </div>
             </div>
         </div>
@@ -368,7 +474,7 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section bg-light">
         <div class="container">
-            <div class="text-center mb-5">
+            <div class="text-center mb-5 pb-2">
                 <h2>Contact Us</h2>
                 <p class="text-muted">We are here to answer your questions and provide the coverage you need.</p>
             </div>
@@ -377,30 +483,30 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="contact-info-box">
                         <i class="fa-solid fa-building"></i>
-                        <h5>Corporate Info</h5>
-                        <p class="mb-1">Palm Insurance LLC</p>
-                        <p class="mb-1">Agency License: 9876543</p>
-                        <p class="mb-0"><a href="#" class="text-decoration-none text-dark">www.palminsurancedemo.net</a></p>
+                        <h5 class="mb-3">Corporate Info</h5>
+                        <p class="mb-1 text-muted">Palm Insurance LLC</p>
+                        <p class="mb-1 text-muted">Agency License: 9876543</p>
+                        <p class="mb-0"><a href="#" class="text-decoration-none text-dark fw-medium">www.palminsurancedemo.net</a></p>
                     </div>
                 </div>
                 
                 <div class="col-lg-4 col-md-6">
                     <div class="contact-info-box">
                         <i class="fa-solid fa-phone"></i>
-                        <h5>Phone Directory</h5>
-                        <p class="mb-1"><strong>Toll-Free:</strong> (555) 019-8877</p>
-                        <p class="mb-1"><strong>Downtown Office:</strong> (555) 234-5678</p>
-                        <p class="mb-0"><strong>Westside Branch:</strong> (555) 876-5432</p>
+                        <h5 class="mb-3">Phone Directory</h5>
+                        <p class="mb-1 text-muted"><strong>Toll-Free:</strong> (555) 019-8877</p>
+                        <p class="mb-1 text-muted"><strong>Downtown:</strong> (555) 234-5678</p>
+                        <p class="mb-0 text-muted"><strong>Westside:</strong> (555) 876-5432</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6">
                     <div class="contact-info-box">
                         <i class="fa-solid fa-envelope"></i>
-                        <h5>Email Us</h5>
-                        <p class="mb-1"><a href="mailto:contact@palminsurancedemo.net" class="text-decoration-none text-dark">contact@palminsurancedemo.net</a></p>
-                        <p class="mb-1"><a href="mailto:support@palminsurancedemo.net" class="text-decoration-none text-dark">support@palminsurancedemo.net</a></p>
-                        <a href="#contact" class="btn btn-outline-dark btn-sm mt-3">Contact Form</a>
+                        <h5 class="mb-3">Email Us</h5>
+                        <p class="mb-1"><a href="mailto:contact@palminsurancedemo.net" class="text-decoration-none text-muted">contact@palminsurancedemo.net</a></p>
+                        <p class="mb-4"><a href="mailto:support@palminsurancedemo.net" class="text-decoration-none text-muted">support@palminsurancedemo.net</a></p>
+                        <button type="button" class="btn btn-outline-custom w-100" data-bs-toggle="modal" data-bs-target="#contactFormModal">Open Contact Form</button>
                     </div>
                 </div>
             </div>
@@ -411,24 +517,60 @@
     <footer class="text-center text-md-start">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-6 mb-3 mb-md-0">
-                    <p class="mb-0">&copy; 2026 Palm Insurance. Demo build &mdash; sample project, not a live business.</p>
-                    <div class="mt-2">
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="me-3">Privacy Policy</a>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Disclaimer</a>
+                <div class="col-md-7 mb-4 mb-md-0">
+                    <p class="mb-2 text-white opacity-75 small">&copy; 2026 Palm Insurance. Demo build &mdash; sample project, not a live business.</p>
+                    <div class="mt-3">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal" class="me-4 text-white-50">Privacy Policy</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#disclaimerModal" class="text-white-50">Disclaimer</a>
                     </div>
                 </div>
-                <div class="col-md-6 text-md-end social-icons">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <!-- Real Social Media Login Links -->
+                <div class="col-md-5 text-md-end social-icons">
+                    <a href="https://www.facebook.com/login/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://twitter.com/login" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.linkedin.com/login" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Universal Coverages Modal (Demo Version) -->
+    <!-- ================= MODALS SECTION ================= -->
+    
+    <!-- Functional Contact Form Modal -->
+    <div class="modal fade" id="contactFormModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header border-bottom-0 pb-0 pt-4 px-4">
+                    <h5 class="modal-title fw-bold">Submit a Request</h5>
+                    <button type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body px-4 pb-4 pt-3">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-medium">Full Name</label>
+                            <input type="text" class="form-control px-3 py-2" placeholder="John Doe">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-medium">Email Address</label>
+                            <input type="email" class="form-control px-3 py-2" placeholder="john@company.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-medium">Company Name</label>
+                            <input type="text" class="form-control px-3 py-2" placeholder="Your Business LLC">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label text-muted small fw-medium">Message / Inquiry</label>
+                            <textarea class="form-control px-3 py-2" rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="button" class="btn btn-primary-custom w-100" data-bs-dismiss="modal">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generic Coverage Modal -->
     <div class="modal fade" id="genericModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -437,10 +579,10 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <p>This is a portfolio demonstration. In a live production environment, this section will detail the specific policies, limits, and terms for the selected insurance product line (e.g., General Liability, Commercial Property, Workers' Compensation).</p>
+                    <p>This is a portfolio demonstration. In a live production environment, this section will detail the specific policies, limits, and terms for the selected insurance product line.</p>
                     <ul class="list-group list-group-flush mt-3">
                         <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Customizable limits and deductibles</li>
-                        <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Comprehensive liability protection</li>
+                        <li class="list on-group-item"><i class="fa-solid fa-check text-success me-2"></i> Comprehensive liability protection</li>
                         <li class="list-group-item"><i class="fa-solid fa-check text-success me-2"></i> Business interruption support</li>
                     </ul>
                 </div>
@@ -463,7 +605,6 @@
                     <strong>(a) Volunteered Information:</strong> We will receive and store any information you enter on the Web Site to improve your experience and to enable us to contact you.<br>
                     <strong>(b) Automatic Information:</strong> We collect aggregated site-visitation statistics using cookies to enhance users’ web viewing experience.</p>
                     <p><em>No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.</em></p>
-                    <p><strong>(2) Choice & Security:</strong> We give you a choice as to the type of private information we have and protect it using Secure Socket Layer (SSL) technology.</p>
                 </div>
             </div>
         </div>
@@ -488,5 +629,26 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS: Auto-close Mobile Menu & Smooth Scrolling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link-close');
+            const navbarCollapse = document.getElementById('navbarNav');
+            
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    // Cek jika menu sedang terbuka di mode mobile
+                    if (navbarCollapse.classList.contains('show')) {
+                        // Tutup menu secara programatik menggunakan API Bootstrap
+                        let bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
